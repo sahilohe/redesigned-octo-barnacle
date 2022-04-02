@@ -10,7 +10,7 @@ describe('calc_solana', () => {
     const program = anchor.workspace.calculator;
   
     it('Creates a calculator', async () => {
-        await program.rpc.create("Welcome to Solana", {
+        await program.rpc.create("Welcome to Solana", { //this is causing error
           accounts: {
             calculator: calculator.publicKey,
             user: provider.wallet.publicKey,
@@ -21,7 +21,7 @@ describe('calc_solana', () => {
     
         const account = await program.account.calculator.fetch(calculator.publicKey);
         assert.ok(account.greeting === "Welcome to Solana");
-        _calculator = calculator;
+        _calculator = calculator; // _calculator is not defined (error)
       });
   
       it("Adds two numbers", async function() {
