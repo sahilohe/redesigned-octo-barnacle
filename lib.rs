@@ -43,7 +43,7 @@ pub mod calc_solana {
 
 #[derive(Accounts)]
 pub struct Create<'info> {
-    #[account(init, payer = user, space = 8 + 64 + 64 + 64 + 64)]
+    #[account(init, payer = user, space = 8 + 64 + 64 + 64 + 64)] //didn't understood this one, will figure it out!!
     pub calculator: Account<'info, Calculator>,
     #[account(mut)]
     pub user: Signer<'info>,
